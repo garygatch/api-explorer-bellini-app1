@@ -308,9 +308,7 @@
   ],
   "bindings": [],
   "modules": [],
-  "marketplaceId": null,
   "formControl": null,
-  "transclude": null,
   "styles": [],
   "directories": {
     "assets": [
@@ -333,5 +331,17 @@
       }
     ]
   },
-  "parentDirectoryId": "LOthKPLvjN4kzTHQHiPTL"
+  "parentDirectoryId": "LOthKPLvjN4kzTHQHiPTL",
+  "localStylesheets": [
+    {
+      "path": "dir/country-display.css",
+      "parentDirectoryId": "xllfrk0YPrNht3MqVtMQc"
+    }
+  ],
+  "localScripts": [
+    {
+      "path": "dir/country-display.js",
+      "parentDirectoryId": "gYI9cTmjgtE2AiGZuj6vt"
+    }
+  ]
 }
