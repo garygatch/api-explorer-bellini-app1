@@ -1,0 +1,74 @@
+/* Scoped to country-display */
+country-display {
+  display: block;
+  perspective: 1000px;
+}
+
+country-display .country-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideUpFade 0.6s ease-out forwards;
+  opacity: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fancy gradient background on hover */
+country-display .country-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+country-display .country-card:hover::before {
+  opacity: 1;
+}
+
+/* Ensure contents stay above the pseudo-element */
+country-display .country-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9) rotateX(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+country-display .country-card:hover {
+  transform: translateY(-12px) scale(1.05) rotateY(5deg) rotateX(5deg);
+  box-shadow: -10px 20px 25px -5px rgba(0, 0, 0, 0.2), 10px 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #8b5cf6; /* Violet 500 */
+  z-index: 10;
+}
+
+@keyframes boldPulseClick {
+  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); transform: scale(0.95); }
+  50% { transform: scale(1.02); }
+  100% { box-shadow: 0 0 0 20px rgba(139, 92, 246, 0); transform: scale(1); }
+}
+
+country-display .country-card.clicked {
+  animation: boldPulseClick 0.6s ease-out;
+  border-color: #ec4899; /* Pink 500 */
+}
+
+/* Country code bounce */
+country-display .country-card:hover .country-code {
+  color: #8b5cf6;
+  font-weight: bold;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}

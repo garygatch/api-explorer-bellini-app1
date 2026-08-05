@@ -1,0 +1,51 @@
+{
+  "type": "app-service",
+  "name": "country-service",
+  "description": "## Country Service\nManages country data. Exposes state for `countries`, `loading`, and `error`, along with `loadCountries` to fetch from the GraphQL API.",
+  "singleton": true,
+  "variables": [
+    {
+      "name": "countries",
+      "description": "Array of country data.",
+      "type": "property",
+      "value": "[]"
+    },
+    {
+      "name": "loading",
+      "description": "Indicates if countries are being loaded.",
+      "type": "property",
+      "value": "false"
+    },
+    {
+      "name": "error",
+      "description": "Stores error message if loading fails.",
+      "type": "property",
+      "value": "null"
+    },
+    {
+      "name": "countriesApi",
+      "type": "graphql-api",
+      "id": "graphql-api"
+    },
+    {
+      "name": "loadCountries",
+      "description": "Fetches country list from API and updates state.",
+      "type": "method",
+      "body": "this.loading = true;\nthis.error = null;\ntry {\n  const items = await this.countriesApi.query.countries({}, { code: true, name: true, emoji: true });\n  this.countries = items || [];\n} catch (err) {\n  this.error = (err && err.message) || 'Failed to load countries.';\n} finally {\n  this.loading = false;\n}",
+      "invokeOnLoad": false,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "visible": [
+    "countries",
+    "loading",
+    "error",
+    "loadCountries"
+  ],
+  "parentDirectoryId": "kc8AhHhkNhS4GNPDLNBxM"
+}

@@ -1,0 +1,157 @@
+{
+  "name": "countries",
+  "type": "page",
+  "url": "/countries",
+  "params": {},
+  "variables": [
+    {
+      "name": "$state",
+      "type": "service"
+    },
+    {
+      "name": "goBack",
+      "description": "",
+      "type": "method",
+      "body": "$ctrl.$state.go('home');",
+      "invokeOnLoad": false,
+      "isAsync": false,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "children": [
+    {
+      "name": "div",
+      "classList": [],
+      "styles": [
+        {
+          "property": "padding",
+          "value": "24px",
+          "enabled": true
+        }
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "crossAxisAlignment": "stretch",
+          "gap": "16px"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "crossAxisAlignment": "center",
+              "gap": "16px"
+            }
+          },
+          "children": [
+            {
+              "name": "Button",
+              "nodeName": "bln-button",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                }
+              ],
+              "classList": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Back'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'secondary'",
+                  "to": "type"
+                },
+                {
+                  "expression": "$ctrl.goBack()",
+                  "to": "onClick"
+                }
+              ]
+            },
+            {
+              "name": "h1",
+              "classList": [],
+              "styles": [
+                {
+                  "property": "font-size",
+                  "value": "1.5rem",
+                  "enabled": true
+                },
+                {
+                  "property": "font-weight",
+                  "value": "600",
+                  "enabled": true
+                },
+                {
+                  "property": "margin",
+                  "value": "0",
+                  "enabled": true
+                }
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 1,
+                  "shrinkFactor": 1,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "Countries",
+                  "evaluate": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "country-display",
+          "nodeName": "country-display",
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 1,
+              "shrinkFactor": 1,
+              "mainSize": "auto"
+            }
+          },
+          "children": [],
+          "type": "custom-component",
+          "ownerId": "6a72a219e2bc21db8af988aa",
+          "ownerType": "app",
+          "expressions": []
+        }
+      ]
+    }
+  ]
+}

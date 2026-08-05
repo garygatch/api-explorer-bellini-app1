@@ -1,0 +1,300 @@
+{
+  "name": "pets",
+  "type": "page",
+  "url": "/pets",
+  "params": {},
+  "variables": [
+    {
+      "name": "petstoreApi",
+      "type": "open-api",
+      "id": "open-api"
+    },
+    {
+      "name": "lastItems",
+      "description": "Tracks the current page of pets to handle the empty state.",
+      "type": "property",
+      "value": "null"
+    },
+    {
+      "name": "errorMessage",
+      "description": "Stores error messages from the API.",
+      "type": "property",
+      "value": "null"
+    },
+    {
+      "name": "currentPage",
+      "description": "",
+      "type": "property",
+      "value": "1"
+    },
+    {
+      "name": "pageSize",
+      "description": "",
+      "type": "property",
+      "value": "10"
+    },
+    {
+      "name": "totalPages",
+      "description": "",
+      "type": "property",
+      "value": "0"
+    },
+    {
+      "name": "loadPets",
+      "description": "",
+      "type": "method",
+      "body": "$ctrl.errorMessage = null;\ntry {\n  const result = await $ctrl.petstoreApi.findPetsByStatus({ status: ['available'] });\n  const allRows = Array.isArray(result.data) ? result.data : [];\n  $ctrl.totalPages = Math.ceil(allRows.length / $ctrl.pageSize) || 1;\n  const start = ($ctrl.currentPage - 1) * $ctrl.pageSize;\n  const rows = allRows.slice(start, start + $ctrl.pageSize);\n  $ctrl.lastItems = rows;\n  return rows;\n} catch (err) {\n  $ctrl.errorMessage = (err && err.data && err.data.message) || 'Failed to load pets.';\n  $ctrl.totalPages = 0;\n  $ctrl.lastItems = [];\n  return [];\n}",
+      "invokeOnLoad": false,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    },
+    {
+      "name": "onPageChange",
+      "description": "",
+      "type": "method",
+      "body": "$ctrl.currentPage = currentPage;\nreturn $ctrl.loadPets();",
+      "invokeOnLoad": false,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [
+        "currentPage"
+      ],
+      "watch": []
+    }
+  ],
+  "children": [
+    {
+      "name": "div",
+      "classList": [
+        "p-8",
+        "max-w-[1200px]",
+        "mx-auto",
+        "pets-page-container"
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "crossAxisAlignment": "stretch",
+          "gap": "1.5rem"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "Link",
+              "nodeName": "bln-link",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                }
+              ],
+              "classList": [],
+              "children": [],
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "({'type': 'state', 'state': 'home', 'parameters': {}})",
+                  "to": "link"
+                },
+                {
+                  "expression": "'Back to Home'",
+                  "to": "text"
+                },
+                {
+                  "expression": "({type: 'font-icon', name: 'arrow-left', style: 'solid', position: 'left'})",
+                  "to": "icon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "h1",
+          "classList": [
+            "text-3xl",
+            "font-semibold",
+            "text-gray-900"
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "textContent": "Available Pets",
+              "evaluate": false
+            }
+          ]
+        },
+        {
+          "name": "div",
+          "classList": [
+            "p-4",
+            "rounded-lg",
+            "bg-red-50",
+            "text-red-700"
+          ],
+          "displayExpression": "$ctrl.errorMessage",
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "textContent": "$ctrl.errorMessage",
+              "evaluate": true
+            }
+          ]
+        },
+        {
+          "name": "div",
+          "classList": [
+            "p-8",
+            "text-center",
+            "text-gray-500",
+            "bg-gray-50",
+            "rounded-lg"
+          ],
+          "displayExpression": "!$ctrl.errorMessage && $ctrl.lastItems && $ctrl.lastItems.length === 0",
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "textContent": "No available pets found.",
+              "evaluate": false
+            }
+          ]
+        },
+        {
+          "name": "div",
+          "classList": [
+            "overflow-hidden",
+            "rounded-lg",
+            "border",
+            "border-gray-200",
+            "bg-white"
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 1,
+              "shrinkFactor": 1,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "Table",
+              "nodeName": "bln-table",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                }
+              ],
+              "classList": [
+                "pets-table"
+              ],
+              "children": [],
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "false",
+                  "to": "enablePagination"
+                },
+                {
+                  "expression": "$ctrl.loadPets()",
+                  "to": "data"
+                },
+                {
+                  "expression": "$ctrl.currentPage",
+                  "to": "currentPage"
+                },
+                {
+                  "expression": "[{name: 'ID', valueKey: 'id', type: 'number', width: '100', textAlign: 'left', headerTextAlign: 'left', enableSorting: true, enableFiltering: false, enablePinning: false, hide: false, cellTooltip: '', cellConditionalStyle: [], cellActions: [], classes: [], conditionalClasses: []}, {name: 'Name', valueKey: 'name', type: 'string', enableSorting: true, enableFiltering: false, enablePinning: false, hide: false, cellTooltip: '', cellConditionalStyle: [], cellActions: [], classes: [], conditionalClasses: []}, {name: 'Status', valueKey: 'status', type: 'string', width: '150', enableSorting: true, enableFiltering: false, enablePinning: false, hide: false, cellTooltip: '', cellConditionalStyle: [], cellActions: [], classes: [], conditionalClasses: [{condition: \"row.status === 'available'\", classes: ['pet-status-available']}]}]",
+                  "to": "columns"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pagination",
+          "nodeName": "bln-pagination",
+          "attributes": [
+            {
+              "property": "core",
+              "value": ""
+            }
+          ],
+          "classList": [],
+          "displayExpression": "!$ctrl.errorMessage && $ctrl.totalPages > 1",
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [],
+          "type": "core-component",
+          "expressions": [
+            {
+              "expression": "$ctrl.currentPage",
+              "to": "currentPage"
+            },
+            {
+              "expression": "$ctrl.totalPages",
+              "to": "totalPages"
+            },
+            {
+              "expression": "'currentPageAndTotalPages'",
+              "to": "display"
+            },
+            {
+              "expression": "$ctrl.onPageChange(currentPage)",
+              "to": "onPageChange"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

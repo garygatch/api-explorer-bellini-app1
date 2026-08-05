@@ -1,0 +1,357 @@
+{
+  "type": "custom-component",
+  "name": "country-display",
+  "nodeName": null,
+  "icon": null,
+  "iconType": null,
+  "description": "Displays countries fetched from countryService in a responsive grid.",
+  "children": [
+    {
+      "name": "div",
+      "classList": [
+        "p-8",
+        "justify-center"
+      ],
+      "displayExpression": "$ctrl.countryService.loading",
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "row",
+          "crossAxisAlignment": "center",
+          "gap": "8px"
+        }
+      },
+      "children": [
+        {
+          "name": "Spinner",
+          "nodeName": "bln-spinner",
+          "attributes": [
+            {
+              "property": "core",
+              "value": ""
+            }
+          ],
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [],
+          "type": "core-component",
+          "expressions": []
+        },
+        {
+          "name": "p",
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "textContent": "'Loading countries...'",
+              "evaluate": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "div",
+      "classList": [
+        "p-8",
+        "text-center"
+      ],
+      "displayExpression": "$ctrl.countryService.error",
+      "children": [
+        {
+          "name": "p",
+          "classList": [
+            "text-red-600"
+          ],
+          "children": [
+            {
+              "name": "text",
+              "textContent": "$ctrl.countryService.error",
+              "evaluate": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "div",
+      "classList": [
+        "p-8",
+        "text-center"
+      ],
+      "displayExpression": "!$ctrl.countryService.loading && !$ctrl.countryService.error && $ctrl.countryService.countries.length === 0",
+      "children": [
+        {
+          "name": "p",
+          "classList": [
+            "text-gray-500"
+          ],
+          "children": [
+            {
+              "name": "text",
+              "textContent": "'No countries found.'",
+              "evaluate": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "div",
+      "classList": [
+        "p-4"
+      ],
+      "displayExpression": "!$ctrl.countryService.loading && $ctrl.countryService.countries.length > 0",
+      "layout": {
+        "container": {
+          "type": "grid",
+          "columns": [
+            {
+              "type": "other",
+              "value": "repeat(auto-fill, minmax(200px, 1fr))"
+            }
+          ],
+          "rows": [
+            {
+              "type": "other",
+              "value": "auto"
+            }
+          ],
+          "columnGap": "16px",
+          "rowGap": "16px"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "classList": [
+            "p-6",
+            "border",
+            "border-gray-200",
+            "rounded-xl",
+            "shadow-sm",
+            "bg-white",
+            "country-card"
+          ],
+          "iterate": {
+            "array": "$ctrl.countryService.countries",
+            "variable": "country"
+          },
+          "layout": {
+            "cell": {
+              "type": "grid-item"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "column",
+              "crossAxisAlignment": "center",
+              "gap": "8px"
+            }
+          },
+          "children": [
+            {
+              "name": "div",
+              "classList": [
+                "text-5xl",
+                "mb-2"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "country.emoji",
+                  "evaluate": true
+                }
+              ]
+            },
+            {
+              "name": "h3",
+              "classList": [
+                "text-lg",
+                "font-semibold",
+                "text-gray-900",
+                "text-center"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "country.name",
+                  "evaluate": true
+                }
+              ]
+            },
+            {
+              "name": "p",
+              "classList": [
+                "text-sm",
+                "text-gray-500",
+                "country-code"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "country.code",
+                  "evaluate": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "div",
+      "classList": [
+        "mt-8",
+        "p-4",
+        "text-gray-400",
+        "text-sm"
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "row",
+          "crossAxisAlignment": "center",
+          "mainAxisAlignment": "center",
+          "gap": "8px"
+        }
+      },
+      "children": [
+        {
+          "name": "img",
+          "classList": [],
+          "styles": [
+            {
+              "property": "width",
+              "value": "16px",
+              "enabled": true
+            },
+            {
+              "property": "height",
+              "value": "16px",
+              "enabled": true
+            }
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [],
+          "source": {
+            "evaluate": false,
+            "url": "https://dummyimage.com/240/777777/dfdfdf.png"
+          }
+        },
+        {
+          "name": "span",
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "textContent": "User",
+              "evaluate": false
+            }
+          ]
+        }
+      ],
+      "comments": "Discreet footer with user icon and text."
+    }
+  ],
+  "variables": [
+    {
+      "name": "countryService",
+      "type": "service",
+      "id": "service"
+    },
+    {
+      "name": "loadData",
+      "description": "Loads countries on init.",
+      "type": "method",
+      "body": "await $ctrl.countryService.loadCountries();",
+      "invokeOnLoad": true,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "bindings": [],
+  "modules": [],
+  "marketplaceId": null,
+  "formControl": null,
+  "transclude": null,
+  "styles": [],
+  "directories": {
+    "assets": [
+      {
+        "id": "3y51TYg2C53ofsG1P4TUk",
+        "name": "images"
+      }
+    ],
+    "components": [],
+    "scripts": [
+      {
+        "id": "gYI9cTmjgtE2AiGZuj6vt",
+        "name": "dir"
+      }
+    ],
+    "stylesheets": [
+      {
+        "id": "xllfrk0YPrNht3MqVtMQc",
+        "name": "dir"
+      }
+    ]
+  },
+  "parentDirectoryId": "LOthKPLvjN4kzTHQHiPTL",
+  "localStylesheets": [
+    {
+      "path": "country-display.css",
+      "parentDirectoryId": "oRPT-_YD4XjH65NvEksgI"
+    },
+    {
+      "path": "dir/animations.css",
+      "parentDirectoryId": "xllfrk0YPrNht3MqVtMQc"
+    }
+  ],
+  "localScripts": [
+    {
+      "path": "country-display.js",
+      "parentDirectoryId": "tzGsicYYQHc7wUVjZX-S0"
+    },
+    {
+      "path": "dir/animations.js",
+      "parentDirectoryId": "gYI9cTmjgtE2AiGZuj6vt"
+    }
+  ]
+}

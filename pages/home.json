@@ -1,0 +1,522 @@
+{
+  "name": "home",
+  "type": "page",
+  "url": "/home",
+  "params": {},
+  "variables": [],
+  "children": [
+    {
+      "name": "div",
+      "classList": [
+        "max-w-5xl",
+        "mx-auto",
+        "p-8"
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "gap": "32px",
+          "crossAxisAlignment": "stretch"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "mainSize": "auto",
+              "growFactor": 0,
+              "shrinkFactor": 0
+            }
+          },
+          "children": [
+            {
+              "name": "h1",
+              "classList": [
+                "text-4xl",
+                "font-bold",
+                "text-gray-900",
+                "mb-4"
+              ],
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "Welcome to API Explorer",
+                  "evaluate": false
+                }
+              ]
+            },
+            {
+              "name": "p",
+              "classList": [
+                "text-lg",
+                "text-gray-600"
+              ],
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "Explore how to integrate with both OpenAPI and GraphQL services using Bellini. Choose a demo below to see it in action.",
+                  "evaluate": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "div",
+          "classList": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "mainSize": "auto",
+              "growFactor": 1,
+              "shrinkFactor": 1
+            },
+            "container": {
+              "type": "grid",
+              "columns": [
+                {
+                  "type": "span",
+                  "value": 1
+                },
+                {
+                  "type": "span",
+                  "value": 1
+                },
+                {
+                  "type": "span",
+                  "value": 1
+                }
+              ],
+              "rows": [
+                {
+                  "type": "other",
+                  "value": "auto"
+                }
+              ],
+              "columnGap": "24px",
+              "rowGap": "24px"
+            }
+          },
+          "children": [
+            {
+              "name": "div",
+              "classList": [
+                "bg-white",
+                "rounded-lg",
+                "shadow-sm",
+                "border",
+                "border-gray-200",
+                "p-6"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "grid-item",
+                  "columnStart": 1,
+                  "rowStart": 1
+                },
+                "container": {
+                  "type": "box",
+                  "orientation": "column",
+                  "crossAxisAlignment": "flex-start",
+                  "gap": "16px"
+                }
+              },
+              "children": [
+                {
+                  "name": "div",
+                  "classList": [],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 0,
+                      "shrinkFactor": 0
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "h2",
+                      "classList": [
+                        "text-xl",
+                        "font-semibold",
+                        "text-gray-900"
+                      ],
+                      "children": [
+                        {
+                          "name": "text",
+                          "textContent": "OpenAPI Demo",
+                          "evaluate": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "p",
+                  "classList": [
+                    "text-gray-600"
+                  ],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 1,
+                      "shrinkFactor": 1
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "Manage pets with a typical RESTful API. Demonstrates standard CRUD operations and auto-generated data mapping from OpenAPI specs.",
+                      "evaluate": false
+                    }
+                  ]
+                },
+                {
+                  "name": "a",
+                  "classList": [
+                    "inline-flex",
+                    "items-center",
+                    "px-4",
+                    "py-2",
+                    "text-sm",
+                    "font-medium",
+                    "text-white",
+                    "bg-blue-600",
+                    "rounded-md",
+                    "hover:bg-blue-700",
+                    "transition-colors"
+                  ],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 0,
+                      "shrinkFactor": 0
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "View Pets Demo",
+                      "evaluate": false
+                    }
+                  ],
+                  "link": {
+                    "type": "state",
+                    "state": "pets",
+                    "parameters": {}
+                  }
+                }
+              ]
+            },
+            {
+              "name": "div",
+              "classList": [
+                "bg-white",
+                "rounded-lg",
+                "shadow-sm",
+                "border",
+                "border-gray-200",
+                "p-6"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "grid-item",
+                  "columnStart": 2,
+                  "rowStart": 1
+                },
+                "container": {
+                  "type": "box",
+                  "orientation": "column",
+                  "crossAxisAlignment": "flex-start",
+                  "gap": "16px"
+                }
+              },
+              "children": [
+                {
+                  "name": "div",
+                  "classList": [],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 0,
+                      "shrinkFactor": 0
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "h2",
+                      "classList": [
+                        "text-xl",
+                        "font-semibold",
+                        "text-gray-900"
+                      ],
+                      "children": [
+                        {
+                          "name": "text",
+                          "textContent": "GraphQL Demo",
+                          "evaluate": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "p",
+                  "classList": [
+                    "text-gray-600"
+                  ],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 1,
+                      "shrinkFactor": 1
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "Explore countries and continents via GraphQL. Demonstrates dynamic field selection, deeply nested queries, and typed mutations.",
+                      "evaluate": false
+                    }
+                  ]
+                },
+                {
+                  "name": "a",
+                  "classList": [
+                    "inline-flex",
+                    "items-center",
+                    "px-4",
+                    "py-2",
+                    "text-sm",
+                    "font-medium",
+                    "text-white",
+                    "bg-indigo-600",
+                    "rounded-md",
+                    "hover:bg-indigo-700",
+                    "transition-colors"
+                  ],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 0,
+                      "shrinkFactor": 0
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "View Countries Demo",
+                      "evaluate": false
+                    }
+                  ],
+                  "link": {
+                    "type": "state",
+                    "state": "countries",
+                    "parameters": {}
+                  }
+                }
+              ]
+            },
+            {
+              "name": "div",
+              "classList": [
+                "bg-white",
+                "rounded-lg",
+                "shadow-sm",
+                "border",
+                "border-gray-200",
+                "p-6"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "grid-item",
+                  "columnStart": 3,
+                  "rowStart": 1
+                },
+                "container": {
+                  "type": "box",
+                  "orientation": "column",
+                  "crossAxisAlignment": "flex-start",
+                  "gap": "16px"
+                }
+              },
+              "children": [
+                {
+                  "name": "div",
+                  "classList": [],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 0,
+                      "shrinkFactor": 0
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "h2",
+                      "classList": [
+                        "text-xl",
+                        "font-semibold",
+                        "text-gray-900"
+                      ],
+                      "children": [
+                        {
+                          "name": "text",
+                          "textContent": "Set Demo",
+                          "evaluate": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "p",
+                  "classList": [
+                    "text-gray-600"
+                  ],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 1,
+                      "shrinkFactor": 1
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "Explore the set functionality. Demonstrates basic layout and components for the set page.",
+                      "evaluate": false
+                    }
+                  ]
+                },
+                {
+                  "name": "a",
+                  "classList": [
+                    "inline-flex",
+                    "items-center",
+                    "px-4",
+                    "py-2",
+                    "text-sm",
+                    "font-medium",
+                    "text-white",
+                    "bg-teal-600",
+                    "rounded-md",
+                    "hover:bg-teal-700",
+                    "transition-colors"
+                  ],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item",
+                      "mainSize": "auto",
+                      "growFactor": 0,
+                      "shrinkFactor": 0
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "View Set Demo",
+                      "evaluate": false
+                    }
+                  ],
+                  "link": {
+                    "type": "state",
+                    "state": "set",
+                    "parameters": {}
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "div",
+          "classList": [
+            "mt-12",
+            "py-6",
+            "text-sm",
+            "text-gray-500",
+            "border-t",
+            "border-gray-200"
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "mainSize": "auto",
+              "growFactor": 0,
+              "shrinkFactor": 0
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "crossAxisAlignment": "center",
+              "mainAxisAlignment": "center",
+              "gap": "8px"
+            }
+          },
+          "children": [
+            {
+              "name": "img",
+              "attributes": [
+                {
+                  "property": "alt",
+                  "value": "Archway Portal logo"
+                }
+              ],
+              "classList": [
+                "h-5",
+                "w-auto",
+                "opacity-60"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "source": {
+                "evaluate": false,
+                "url": "assets/apps/api-explorer/test/archway-solid-full.svg"
+              }
+            },
+            {
+              "name": "span",
+              "classList": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "Archway Portal",
+                  "evaluate": false
+                }
+              ]
+            }
+          ],
+          "comments": "Footer"
+        }
+      ]
+    }
+  ],
+  "description": "## API Explorer Home\nProvides a welcome title and descriptions for the API integrations, along with navigation cards linking to the Pets (OpenAPI), Countries (GraphQL), and Set demos. Includes a discreet footer with the Archway Portal logo."
+}

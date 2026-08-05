@@ -1,0 +1,104 @@
+/* BOLD styling for the Pets page */
+.pets-page-container {
+  animation: slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes slideInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bold table styling */
+.pets-table {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+}
+
+/* Add a bold gradient to the table header */
+.pets-table thead, .pets-table th {
+  background: linear-gradient(90deg, #4f46e5, #9333ea) !important;
+  color: white !important;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Smooth row hover effects */
+.pets-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+.pets-table tbody tr:hover {
+  background-color: #f5f3ff !important; /* light purple tint on hover */
+}
+
+/* Bold status badge with glowing pulse effect */
+.pet-status-available {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 6px 16px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.4);
+  animation: pulseGlow 2s infinite;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pet-status-available:hover {
+  transform: scale(1.15) rotate(-2deg);
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Bold gradient toast notification */
+.pet-toast-notification {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 800;
+  opacity: 0;
+  transform: translate(-50%, -50px) scale(0.8);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pet-toast-notification.show {
+  transform: translate(-50%, 0) scale(1);
+  opacity: 1;
+}
+
+/* Floating Paw Particles Animation */
+.paw-particle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 28px;
+  z-index: 9998;
+  animation: floatUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translateY(0) scale(0.5) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.5) rotate(60deg); }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "api-explorer",
+  "type": "app",
+  "defaultPage": "home",
+  "config": {
+    "config": {
+      "parameters": [],
+      "script": ""
+    },
+    "properties": {
+      "version": "1.0.0-SNAPSHOT",
+      "title": "API Explorer"
+    },
+    "themes": [
+      {
+        "name": "Vibrant Explorer",
+        "active": true,
+        "properties": {
+          "bln-app-text-color": "#1e293b",
+          "bln-core-components-primary-color": "#ec4899",
+          "bln-core-components-secondary-color": "#4f46e5"
+        },
+        "mobileProperties": {},
+        "customThemeVariables": []
+      }
+    ],
+    "environments": [],
+    "auth": {
+      "enabled": false,
+      "mockedUserAccounts": []
+    }
+  },
+  "directories": {
+    "assets": [
+      {
+        "id": "QFpypFsZMFFk2RmsSfV2b",
+        "name": "test"
+      }
+    ],
+    "components": [
+      {
+        "id": "LOthKPLvjN4kzTHQHiPTL",
+        "name": "comps"
+      }
+    ],
+    "pages": [
+      {
+        "id": "lrS84-J1p_c3ci_hm1FYq",
+        "name": "dir"
+      }
+    ],
+    "scripts": [],
+    "services": [
+      {
+        "id": "kc8AhHhkNhS4GNPDLNBxM",
+        "name": "dir"
+      }
+    ],
+    "stylesheets": [
+      {
+        "id": "gHZN91AgD1j_SJ4hYarbV",
+        "name": "test"
+      }
+    ]
+  },
+  "localStylesheets": [
+    {
+      "path": "test/pets.css",
+      "parentDirectoryId": "gHZN91AgD1j_SJ4hYarbV"
+    },
+    {
+      "path": "global-colors.css"
+    }
+  ],
+  "localScripts": [
+    {
+      "path": "pets.js"
+    }
+  ]
+}

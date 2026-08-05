@@ -1,0 +1,130 @@
+{
+  "name": "set",
+  "type": "page",
+  "url": "/set",
+  "params": {},
+  "variables": [],
+  "children": [
+    {
+      "name": "div",
+      "classList": [
+        "min-h-screen"
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "mainAxisAlignment": "space-between",
+          "crossAxisAlignment": "center"
+        }
+      },
+      "children": [
+        {
+          "name": "Badge",
+          "nodeName": "bln-badge",
+          "attributes": [
+            {
+              "property": "core",
+              "value": ""
+            }
+          ],
+          "classList": [
+            "mt-8"
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [],
+          "type": "core-component",
+          "expressions": []
+        },
+        {
+          "name": "footer",
+          "classList": [
+            "py-6",
+            "text-sm",
+            "text-gray-500",
+            "opacity-75"
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "mainAxisAlignment": "center",
+              "crossAxisAlignment": "center",
+              "gap": "8px"
+            }
+          },
+          "children": [
+            {
+              "name": "img",
+              "attributes": [
+                {
+                  "property": "alt",
+                  "value": "Archway Portal"
+                }
+              ],
+              "classList": [],
+              "styles": [
+                {
+                  "property": "width",
+                  "value": "20px",
+                  "enabled": true
+                },
+                {
+                  "property": "height",
+                  "value": "20px",
+                  "enabled": true
+                }
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "source": {
+                "evaluate": false,
+                "url": "assets/apps/api-explorer/test/archway-solid-full.svg"
+              }
+            },
+            {
+              "name": "span",
+              "classList": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "Archway Portal",
+                  "evaluate": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parentDirectoryId": "lrS84-J1p_c3ci_hm1FYq"
+}
