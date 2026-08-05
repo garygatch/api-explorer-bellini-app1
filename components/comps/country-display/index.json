@@ -263,7 +263,7 @@
           "children": [],
           "source": {
             "evaluate": false,
-            "url": "https://dummyimage.com/240/777777/dfdfdf.png"
+            "url": "assets/apps/api-explorer/components/country-display/images/circle-user-solid-full.svg"
           }
         },
         {
@@ -333,25 +333,5 @@
       }
     ]
   },
-  "parentDirectoryId": "LOthKPLvjN4kzTHQHiPTL",
-  "localStylesheets": [
-    {
-      "path": "country-display.css",
-      "parentDirectoryId": "oRPT-_YD4XjH65NvEksgI"
-    },
-    {
-      "path": "dir/animations.css",
-      "parentDirectoryId": "xllfrk0YPrNht3MqVtMQc"
-    }
-  ],
-  "localScripts": [
-    {
-      "path": "country-display.js",
-      "parentDirectoryId": "tzGsicYYQHc7wUVjZX-S0"
-    },
-    {
-      "path": "dir/animations.js",
-      "parentDirectoryId": "gYI9cTmjgtE2AiGZuj6vt"
-    }
-  ]
+  "parentDirectoryId": "LOthKPLvjN4kzTHQHiPTL"
 }
